@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fucp8mocx1ge"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_h1wik"]
+[ext_resource type="Texture2D" uid="uid://ojo3bxa6j68l" path="res://Sprites/S3.png" id="2_ohgeo"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_h1wik")
+
+[node name="empty" type="Sprite2D" parent="."]
+position = Vector2(10, 10)
+texture = ExtResource("2_ohgeo")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 20.0
+offset_bottom = 20.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

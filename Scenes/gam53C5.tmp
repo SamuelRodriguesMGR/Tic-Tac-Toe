@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://jbxv5ytg61bg"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_k8w0j"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_k8w0j")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 51.0
+offset_right = 152.0
+offset_bottom = 77.0
+scale = Vector2(0.275289, 0.336323)
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+text = "Tic-Tac-Toe!"
+vertical_alignment = 2
+uppercase = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(15, 15)

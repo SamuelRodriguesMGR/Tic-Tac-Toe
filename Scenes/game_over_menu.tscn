@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://n22b2mapcl04"]
+
+[ext_resource type="Script" path="res://Scripts/game_over_menu.gd" id="1_cqfaf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2hn7"]
+bg_color = Color(0, 0.0156863, 0.839216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0901961, 0.0588235, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjvwd"]
+bg_color = Color(0.0666667, 0.788235, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0666667, 0.698039, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyqa3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0901961, 0.0588235, 1, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_cqfaf")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -122.0
+offset_right = 182.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_q2hn7")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 24.0
+offset_right = 80.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjvwd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gjvwd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gjvwd")
+text = "Play Again"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.5
+offset_right = 107.5
+offset_bottom = 72.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_eyqa3")
+text = "Nobody won"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

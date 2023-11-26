@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://jbxv5ytg61bg"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_k8w0j"]
+[ext_resource type="PackedScene" uid="uid://n22b2mapcl04" path="res://Scenes/game_over_menu.tscn" id="2_sqtjs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_en4av"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx3cx"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_k8w0j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(15, 15)
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_en4av")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 60.0
+offset_right = 80.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx3cx")
+
+[node name="GameOverMenu" parent="." instance=ExtResource("2_sqtjs")]
+
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
